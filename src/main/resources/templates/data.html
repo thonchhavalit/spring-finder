@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Data</title>
+</head>
+<body>
+<h1>Data</h1>
+
+<!-- Dropdown for selecting type -->
+<form action="/data" method="get">
+    <label for="type">Select Type:</label>
+    <select id="type" name="type">
+        <option value="" selected>All Types</option>
+        <option th:each="type : ${types}" th:value="${type}" th:text="${type}"></option>
+    </select>
+    <button type="submit">Filter</button>
+</form>
+
+<!-- Data Table for METAR -->
+<div th:if="${type == 'metar'}">
+    <h2>METAR Data</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Channel</th>
+            <th>Type</th>
+            <th>Messages</th>
+            <th>Message Date</th>
+            <th>Originator</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="dataItem : ${data}">
+            <td th:text="${dataItem.id}"></td>
+            <td th:text="${dataItem.ahCh}"></td>
+            <td th:text="${dataItem.type}"></td>
+            <td th:text="${dataItem.aFMgs}"></td>
+<!--            <td th:text="${dataItem.aFMsgDate}"></td>-->
+            <td th:text="${dataItem.aFOriginator}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Data Table for ARR -->
+<div th:if="${type == 'arr'}">
+    <h2>ARR Data</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Channel</th>
+            <th>Arrival Time</th>
+            <th>Messages</th>
+            <th>Flight Number</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="dataItem : ${data}">
+            <td th:text="${dataItem.id}"></td>
+            <td th:text="${dataItem.ahCh}"></td>
+<!--            <td th:text="${dataItem.arrivalTime}"></td>-->
+            <td th:text="${dataItem.aFMsg}"></td>
+            <td th:text="${dataItem.aFOriginator}"></td>
+<!--            <td th:text="${dataItem.flightNumber}"></td>-->
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Data Table for DEP -->
+<div th:if="${type == 'dep'}">
+    <h2>DEP Data</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Channel</th>
+            <th>Departure Time</th>
+            <th>Messages</th>
+            <th>Flight Number</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="dataItem : ${data}">
+            <td th:text="${dataItem.id}"></td>
+            <td th:text="${dataItem.afCh}"></td>
+<!--            <td th:text="${dataItem.departureTime}"></td>-->
+            <td th:text="${dataItem.aFMsg}"></td>
+            <td th:text="${dataItem.aFOriginator}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Placeholder for All Types (Optional) -->
+<div th:if="${type == ''}">
+    <h2>Please select a type to view data</h2>
+</div>
+
+</body>
+</html>
