@@ -1,41 +1,13 @@
 <!DOCTYPE html>
-
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8" />
     <title>Source Admin | Table Manage - Buttons</title>
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
-    <meta content="" name="description" />
-    <meta content="" name="author" />
-
-<!--    &lt;!&ndash; ================== BEGIN BASE CSS STYLE ================== &ndash;&gt;-->
-<!--    <link th:href="@{../assets/plugins/jquery-ui/jquery-ui.min.css}" rel="stylesheet" />-->
-<!--    <link th:href="@{../assets/plugins/bootstrap/bootstrap-4.1.1/css/bootstrap.min.css}" rel="stylesheet" />-->
-<!--    <link th:href="@{../assets/plugins/font-awesome/5.1/css/all.css}" rel="stylesheet" />-->
-<!--    <link th:href="@{../assets/css/animate.min.css}" rel="stylesheet" />-->
-<!--    <link th:href="@{../assets/css/style.min.css}" rel="stylesheet" />-->
-<!--    &lt;!&ndash; ================== END BASE CSS STYLE ================== &ndash;&gt;-->
-
-<!--    &lt;!&ndash; ================== BEGIN PAGE LEVEL CSS STYLE ================== &ndash;&gt;-->
-<!--    <link th:href="@{../assets/plugins/bootstrap-calendar/css/bootstrap_calendar.css}" rel="stylesheet" />-->
-<!--    <link th:href="@{../assets/plugins/DataTables/media/css/dataTables.bootstrap.min.css}" rel="stylesheet" />-->
-<!--    <link th:href="@{../assets/plugins/DataTables/extensions/Buttons/css/buttons.bootstrap.min.css}" rel="stylesheet" />-->
-<!--    <link th:href="@{../assets/plugins/DataTables/extensions/Responsive/css/responsive.bootstrap.min.css}" rel="stylesheet" />-->
-<!--    <link th:href="@{../assets/plugins/DataTables/extensions/AutoFill/css/autoFill.bootstrap.min.css}" rel="stylesheet" />-->
-<!--    <link th:href="@{../assets/plugins/DataTables/extensions/ColReorder/css/colReorder.bootstrap.min.css}" rel="stylesheet" />-->
-<!--    <link th:href="@{../assets/plugins/DataTables/extensions/KeyTable/css/keyTable.bootstrap.min.css}" rel="stylesheet" />-->
-<!--    <link th:href="@{../assets/plugins/DataTables/extensions/RowReorder/css/rowReorder.bootstrap.min.css}" rel="stylesheet" />-->
-<!--    <link th:href="@{../assets/plugins/DataTables/extensions/Select/css/select.bootstrap.min.css}" rel="stylesheet" />-->
-<!--    &lt;!&ndash; ================== END PAGE LEVEL CSS STYLE ================== &ndash;&gt;-->
-
-<!--    &lt;!&ndash; ================== BEGIN BASE JS ================== &ndash;&gt;-->
-<!--    <script th:src="@{../assets/plugins/pace/pace.min.js}"></script>-->
-
-<!--    &lt;!&ndash; ================== END BASE JS ================== &ndash;&gt;-->
-
-<!--    &lt;!&ndash;[if lt IE 9]>-->
-<!--    <script th:src="@{../assets/crossbrowserjs/excanvas.min.js}"></script>-->
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- CSS Files -->
+    <!-- CSS Files -->
     <link href="/assets/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
     <link href="/assets/plugins/bootstrap/bootstrap-4.1.1/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/assets/plugins/font-awesome/5.1/css/all.css" rel="stylesheet" />
@@ -50,6 +22,8 @@
     <link href="/assets/plugins/DataTables/extensions/KeyTable/css/keyTable.bootstrap.min.css" rel="stylesheet" />
     <link href="/assets/plugins/DataTables/extensions/RowReorder/css/rowReorder.bootstrap.min.css" rel="stylesheet" />
     <link href="/assets/plugins/DataTables/extensions/Select/css/select.bootstrap.min.css" rel="stylesheet" />
+
+    <!-- JavaScript Files -->
     <script src="/assets/plugins/pace/pace.min.js"></script>
     <script src="/assets/crossbrowserjs/excanvas.min.js"></script>
     <script src="/assets/js/apps.js"></script>
@@ -500,7 +474,7 @@
             <!-- begin panel -->
             <div class="panel pagination-inverse clearfix m-b-0">
                 <!-- Dropdown for selecting type -->
-                <form action="/data" method="get">
+                <form action="/index" method="get">
                     <label for="type">Select Type:</label>
                     <select id="type" name="type">
                         <option value="" selected>All Types</option>
@@ -508,6 +482,7 @@
                     </select>
                     <button type="submit">Filter</button>
                 </form>
+
 
                 <table id="data-table" data-order='[[1,"asc"]]' class="table table-bordered table-hover" >
                     <div th:if="${type == 'metar'}">
@@ -856,37 +831,36 @@
     </div>
 </div>
 <!-- end theme-panel -->
+<!-- jQuery and other scripts -->
 
-<!-- ================== BEGIN BASE JS ================== -->
-<script th:src="@{/assets/plugins/jquery/jquery-3.3.1.min.js}"></script>
-<script th:src="@{/assets/plugins/jquery-ui/jquery-ui.min.js}"></script>
-<script th:src="@{/assets/plugins/bootstrap/bootstrap-4.1.1/js/bootstrap.bundle.min.js}"></script>
+<!-- jQuery and Other Scripts -->
+<script src="/assets/plugins/jquery/jquery-3.3.1.min.js"></script>
+<script src="/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="/assets/plugins/bootstrap/bootstrap-4.1.1/js/bootstrap.bundle.min.js"></script>
 <!--[if lt IE 9]>
-<script th:src="@{/assets/crossbrowserjs/html5shiv.js}"></script>
-<script th:src="@{/assets/crossbrowserjs/respond.min.js}"></script>
+<script src="/assets/crossbrowserjs/html5shiv.js"></script>
+<script src="/assets/crossbrowserjs/respond.min.js"></script>
 <![endif]-->
-<script th:src="@{/assets/plugins/slimscroll/jquery.slimscroll.min.js}"></script>
-<script th:src="@{/assets/plugins/jquery-cookie/jquery.cookie.js}"></script>
-<!-- ================== END BASE JS ================== -->
+<script src="/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="/assets/plugins/jquery-cookie/jquery.cookie.js"></script>
 
-<!-- ================== BEGIN PAGE LEVEL JS ================== -->
-<script th:src="@{/assets/plugins/bootstrap-calendar/js/bootstrap_calendar.min.js}"></script>
-<script th:src="@{/assets/plugins/DataTables/media/js/dataTables.bootstrap.min.js}"></script>
-<script th:src="@{/assets/plugins/DataTables/extensions/Buttons/js/dataTables.buttons.min.js}"></script>
-<script th:src="@{/assets/plugins/DataTables/extensions/Buttons/js/buttons.bootstrap.min.js}"></script>
-<script th:src="@{/assets/plugins/DataTables/extensions/Buttons/js/buttons.print.min.js}"></script>
-<script th:src="@{/assets/plugins/DataTables/extensions/Buttons/js/buttons.flash.min.js}"></script>
-<script th:src="@{/assets/plugins/DataTables/extensions/Buttons/js/buttons.html5.min.js}"></script>
-<script th:src="@{/assets/plugins/DataTables/extensions/Responsive/js/dataTables.responsive.min.js}"></script>
-<script th:src="@{/assets/plugins/DataTables/extensions/AutoFill/js/dataTables.autoFill.min.js}"></script>
-<script th:src="@{/assets/plugins/DataTables/extensions/ColReorder/js/dataTables.colReorder.min.js}"></script>
-<script th:src="@{/assets/plugins/DataTables/extensions/KeyTable/js/dataTables.keyTable.min.js}"></script>
-<script th:src="@{/assets/plugins/DataTables/extensions/RowReorder/js/dataTables.rowReorder.min.js}"></script>
-<script th:src="@{/assets/plugins/DataTables/extensions/Select/js/dataTables.select.min.js}"></script>
-<script th:src="@{/assets/js/page-table-manage-combine.demo.min.js}"></script>
-<script th:src="@{/assets/js/demo.min.js}"></script>
-<script th:src="@{/assets/js/apps.min.js}"></script>
-<!-- ================== END PAGE LEVEL JS ================== -->
+<!-- Page Level Scripts -->
+<script src="/assets/plugins/bootstrap-calendar/js/bootstrap_calendar.min.js"></script>
+<script src="/assets/plugins/DataTables/media/js/dataTables.bootstrap.min.js"></script>
+<script src="/assets/plugins/DataTables/extensions/Buttons/js/dataTables.buttons.min.js"></script>
+<script src="/assets/plugins/DataTables/extensions/Buttons/js/buttons.bootstrap.min.js"></script>
+<script src="/assets/plugins/DataTables/extensions/Buttons/js/buttons.print.min.js"></script>
+<script src="/assets/plugins/DataTables/extensions/Buttons/js/buttons.flash.min.js"></script>
+<script src="/assets/plugins/DataTables/extensions/Buttons/js/buttons.html5.min.js"></script>
+<script src="/assets/plugins/DataTables/extensions/Responsive/js/dataTables.responsive.min.js"></script>
+<script src="/assets/plugins/DataTables/extensions/AutoFill/js/dataTables.autoFill.min.js"></script>
+<script src="/assets/plugins/DataTables/extensions/ColReorder/js/dataTables.colReorder.min.js"></script>
+<script src="/assets/plugins/DataTables/extensions/KeyTable/js/dataTables.keyTable.min.js"></script>
+<script src="/assets/plugins/DataTables/extensions/RowReorder/js/dataTables.rowReorder.min.js"></script>
+<script src="/assets/plugins/DataTables/extensions/Select/js/dataTables.select.min.js"></script>
+<script src="/assets/js/page-table-manage-combine.demo.min.js"></script>
+<script src="/assets/js/demo.min.js"></script>
+<script src="/assets/js/apps.min.js"></script>
 
 <script>
     $(document).ready(function() {
